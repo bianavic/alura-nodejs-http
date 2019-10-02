@@ -1,13 +1,18 @@
 // carregando express e iniciando a aplicacao que inicialmente estava no index.js
-const express = require('express');
-const consign = require('consign');
-const bodyParser = require('body-parser');
+var express = require('express');
+var consign = require('consign');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
 module.exports = function() {
     var app = express();
 
     // adicionar o middleware body-parser no express, agora esta pronto para receber json
+    app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+
+    // obrigatoriamente logo apos o bodyParser
+    app.use(expressValidator());
 
     // consig carrega todos os arquivos da pasta controllers para dentro do objeto express
     // ele ajuda no carregamento das rotas
@@ -16,8 +21,8 @@ module.exports = function() {
     // desta forma a variavel app passa a deter todo o conhecimento da pasta controllers
     consign()
     .include('controllers')
-    .into(app) 
-    
-
-    return app;
-}
+    .then('persistencia')
+    .into(app);
+ 
+   return app;
+ }
