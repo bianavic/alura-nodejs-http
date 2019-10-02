@@ -1,0 +1,24 @@
+{
+  "name": "alura-nodejs-http",
+  "version": "1.0.0",
+  "description": "um gateway para pagamentos atraves de recursos http.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bianavic/alura-nodejs-http.git"
+  },
+  "keywords": [
+    "gateway",
+    "pagamentos",
+    "api"
+  ],
+  "author": "Fabiana Ferlin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bianavic/alura-nodejs-http/issues"
+  },
+  "homepage": "https://github.com/bianavic/alura-nodejs-http#readme"
+}
